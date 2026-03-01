@@ -1,3 +1,30 @@
-# My_portfolio
+# Dipanshu Portfolio (3D Rebuild)
 
-Welcome to my personal portfolio website – a responsive and professional showcase of my expertise in Artificial Intelligence, Machine Learning, Deep Learning, and Generative AI. Built with clean HTML5, CSS3, and JavaScript, this portfolio highlights my academic background, technical skill set, and impactful AI projects.
+Modern portfolio rebuilt with:
+- React + TypeScript + Vite
+- Three.js via @react-three/fiber and @react-three/drei
+- Framer Motion for section and hero animations
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Content updates
+
+Update your personal/project content in:
+- `src/data/portfolio.ts`
+
+## Static assets
+
+- `public/image.png`
+- `public/Dipanshu_Choudhary_Resume_Gen_AI.pdf`
