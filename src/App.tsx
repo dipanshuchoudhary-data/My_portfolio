@@ -31,6 +31,7 @@ type Project = {
   github: string;
   demo: string;
   gradient: string;
+  image?: string;
 };
 
 type ContactForm = {
@@ -99,7 +100,8 @@ const projects: Project[] = [
     highlights: ["Integrity scoring workflows", "Automated LLM-assisted evaluation", "Live analytics for instructors"],
     github: "https://github.com/dipanshuchoudhary-data/Quizzer",
     demo: "#",
-    gradient: "linear-gradient(140deg, rgba(38, 82, 126, 0.55), rgba(35, 52, 94, 0.45), rgba(20, 31, 58, 0.6))"
+    gradient: "linear-gradient(140deg, rgba(38, 82, 126, 0.55), rgba(35, 52, 94, 0.45), rgba(20, 31, 58, 0.6))",
+    image: "public\\quizzer.png"
   },
   {
     number: "Project 2",
@@ -107,9 +109,10 @@ const projects: Project[] = [
     oneLine: "Autonomous agent system built for cross-platform execution with memory-aware task orchestration.",
     tech:["Node.js", "TypeScript", "Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
     highlights: ["Planner and executor multi-agent flow", "Persistent contextual memory", "Dynamic tool routing"],
-    github: "https://github.com/dipanshuchoudhary-data",
+    github: "https://github.com/dipanshuchoudhary-data/Slack-Bot",
     demo: "#",
-    gradient: "linear-gradient(145deg, rgba(29, 71, 69, 0.55), rgba(35, 56, 90, 0.48), rgba(19, 33, 54, 0.58))"
+    gradient: "linear-gradient(145deg, rgba(29, 71, 69, 0.55), rgba(35, 56, 90, 0.48), rgba(19, 33, 54, 0.58))",
+    image: "public\\Noor.png"
   },
   {
     number: "Project 3",
@@ -282,6 +285,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         style={{ transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
       >
         <div className="project-visual" style={{ background: project.gradient }}>
+          {project.image && <img className="project-visual-image" src={project.image} alt={`${project.title} preview`} loading="lazy" />}
           <span className="project-chip">{project.number}</span>
           <span className="project-glass-layer" />
           <span className="project-sweep" />
