@@ -96,15 +96,15 @@ export const projects: Project[] = [
     title: "Quizzer",
     summary:
       "Scalable AI-powered secure assessment platform with backend-controlled exams, real-time integrity tracking, and automated LLM-based grading.",
-    tech: ["Python", "FastAPI", "LLMs", "PostgreSQL", "React"],
-    link: "https://github.com/dipanshuchoudhary-data"
+    tech: ["Python", "FastAPI", "TypeScript", "React", "PostgreSQL", "Alembic"],
+    link: "https://github.com/dipanshuchoudhary-data/Quizzer"
   },
   {
     title: "Autonomous Multi-Platform AI Agent",
     summary:
       "Python-based autonomous LLM agent executing user-defined tasks across chat platforms using dynamic tool orchestration and persistent memory.",
-    tech: ["Python", "LLMs", "LangChain", "CrewAI", "Agentic AI"],
-    link: "https://github.com/dipanshuchoudhary-data"
+    tech: ["Node.js", "TypeScript", "Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
+    link: "https://github.com/dipanshuchoudhary-data/Slack-Bot"
   },
   {
     title: "MediSure",
