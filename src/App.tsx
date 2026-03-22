@@ -99,20 +99,20 @@ const projects: Project[] = [
     tech: ["Python", "FastAPI", "TypeScript", "React", "PostgreSQL", "Alembic"],
     highlights: ["Integrity scoring workflows", "Automated LLM-assisted evaluation", "Live analytics for instructors"],
     github: "https://github.com/dipanshuchoudhary-data/Quizzer",
-    demo: "#",
+    demo: "https://quizzer-f89iltr0z-dipanshu-choudharys-projects.vercel.app",
     gradient: "linear-gradient(140deg, rgba(38, 82, 126, 0.55), rgba(35, 52, 94, 0.45), rgba(20, 31, 58, 0.6))",
-    image: "public\\quizzer.png"
+    image: "/quizzer.png"
   },
   {
     number: "Project 2",
     title: "Autonomous Multi-Platform AI Agent",
     oneLine: "Autonomous agent system built for cross-platform execution with memory-aware task orchestration.",
-    tech:["Node.js", "TypeScript", "Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
+    tech:["Python","Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
     highlights: ["Planner and executor multi-agent flow", "Persistent contextual memory", "Dynamic tool routing"],
-    github: "https://github.com/dipanshuchoudhary-data/Slack-Bot",
+    github: "https://github.com/dipanshuchoudhary-data/Maantra-1.0",
     demo: "#",
     gradient: "linear-gradient(145deg, rgba(29, 71, 69, 0.55), rgba(35, 56, 90, 0.48), rgba(19, 33, 54, 0.58))",
-    image: "public\\Noor.png"
+    image: "/Noor.png"
   },
   {
     number: "Project 3",
