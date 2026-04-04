@@ -1,6 +1,6 @@
 import type { FormEvent, MouseEvent as ReactMouseEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import profilePhoto from "../WhatsApp Image 2026-02-26 at 12.38.08 PM.jpeg";
 
 type Ripple = {
@@ -73,21 +73,10 @@ const skillCategories: SkillCategory[] = [
 
 const experiences: ExperienceItem[] = [
   {
-    title: "AI Automation & Agent Developer",
-    description:
-      "Designed and deployed AI agents for two brands, automating business workflows and reducing manual operations.",
-    highlights: ["Built autonomous task pipelines", "Integrated LLM-based decision systems"]
-  },
-  {
     title: "Research Assistant",
     description:
-      "Collaborating with faculty on AI/ML projects with focus on deep learning and generative AI applications.",
-    highlights: ["Developed experimental model workflows", "Supported evaluation and iteration pipelines"]
-  },
-  {
-    title: "Open-Source Contributor (Hugging Face)",
-    description: "Contributing to Transformers ecosystem and exploring advanced NLP implementations.",
-    highlights: ["Hands-on ecosystem contribution", "Applied practical transformer integrations"]
+      "Developing AI-powered assistive technology for visually impaired students, including smart glasses that deliver real-time scene understanding and exam support through computer vision and multimodal AI systems.",
+    highlights: ["Built assistive computer vision workflows", "Designed real-time AI support for academic use cases"]
   }
 ];
 
@@ -161,6 +150,8 @@ const reveal = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } }
 };
 
+const RESUME_PATH = "/Dipanshu Choudhary - Resume.pdf";
+
 function RippleButton({
   href,
   label,
@@ -215,16 +206,34 @@ function RippleButton({
 
 function HeroPhoto() {
   const photoRef = useRef<HTMLDivElement | null>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const particles = useMemo(() => Array.from({ length: 8 }, (_, idx) => idx), []);
+  const rafRef = useRef<number | null>(null);
+
+  const setTilt = (x: number, y: number) => {
+    const node = photoRef.current;
+    if (!node) return;
+    node.style.setProperty("--tilt-x", `${x}deg`);
+    node.style.setProperty("--tilt-y", `${y}deg`);
+  };
 
   const onMove = (event: ReactMouseEvent<HTMLDivElement>) => {
     const rect = photoRef.current?.getBoundingClientRect();
     if (!rect) return;
     const px = (event.clientX - rect.left) / rect.width;
     const py = (event.clientY - rect.top) / rect.height;
-    setTilt({ x: (0.5 - py) * 12, y: (px - 0.5) * 14 });
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+    rafRef.current = requestAnimationFrame(() => {
+      setTilt((0.5 - py) * 10, (px - 0.5) * 12);
+    });
   };
+
+  useEffect(() => () => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+  }, []);
 
   return (
     <motion.div
@@ -239,8 +248,7 @@ function HeroPhoto() {
         className="hero-photo-ring"
         ref={photoRef}
         onMouseMove={onMove}
-        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-        style={{ transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+        onMouseLeave={() => setTilt(0, 0)}
         whileHover={{ scale: 1.03 }}
       >
         <div className="hero-photo-frame">
@@ -257,16 +265,34 @@ function HeroPhoto() {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const visualRef = useRef<HTMLDivElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const setTilt = (x: number, y: number) => {
+    const node = visualRef.current;
+    if (!node) return;
+    node.style.setProperty("--project-tilt-x", `${x}deg`);
+    node.style.setProperty("--project-tilt-y", `${y}deg`);
+  };
 
   const onMove = (event: ReactMouseEvent<HTMLDivElement>) => {
     const rect = visualRef.current?.getBoundingClientRect();
     if (!rect) return;
     const px = (event.clientX - rect.left) / rect.width;
     const py = (event.clientY - rect.top) / rect.height;
-    setTilt({ x: (0.5 - py) * 6, y: (px - 0.5) * 8 });
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+    rafRef.current = requestAnimationFrame(() => {
+      setTilt((0.5 - py) * 5, (px - 0.5) * 7);
+    });
   };
+
+  useEffect(() => () => {
+    if (rafRef.current) {
+      cancelAnimationFrame(rafRef.current);
+    }
+  }, []);
 
   return (
     <motion.article
@@ -281,8 +307,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         className="project-visual-wrap"
         ref={visualRef}
         onMouseMove={onMove}
-        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-        style={{ transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
+        onMouseLeave={() => setTilt(0, 0)}
       >
         <div className="project-visual" style={{ background: project.gradient }}>
           {project.image && <img className="project-visual-image" src={project.image} alt={`${project.title} preview`} loading="lazy" />}
@@ -335,18 +360,26 @@ function validateForm(form: ContactForm): ContactErrors {
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [cursor, setCursor] = useState({ x: -120, y: -120 });
   const [form, setForm] = useState<ContactForm>({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<ContactErrors>({});
   const [success, setSuccess] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollY, scrollYProgress } = useScroll();
-  const heroParallax = useTransform(scrollY, [0, 700], [0, 110]);
+  const heroParallax = useTransform(scrollY, [0, 700], [0, shouldReduceMotion ? 36 : 72]);
+  const cursorX = useMotionValue(-170);
+  const cursorY = useMotionValue(-170);
+  const cursorSpringX = useSpring(cursorX, { damping: 34, stiffness: 220, mass: 0.28 });
+  const cursorSpringY = useSpring(cursorY, { damping: 34, stiffness: 220, mass: 0.28 });
 
   useEffect(() => {
-    const onMove = (event: MouseEvent) => setCursor({ x: event.clientX, y: event.clientY });
+    if (shouldReduceMotion) return;
+    const onMove = (event: MouseEvent) => {
+      cursorX.set(event.clientX - 170);
+      cursorY.set(event.clientY - 170);
+    };
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
-  }, []);
+  }, [cursorX, cursorY, shouldReduceMotion]);
 
   const scrollToSection = (id: string) => {
     const section = document.querySelector(id);
@@ -368,11 +401,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <motion.div className="scroll-progress" style={{ scaleX: scrollYProgress }} />
-      <motion.div
-        className="cursor-glow"
-        animate={{ x: cursor.x - 170, y: cursor.y - 170 }}
-        transition={{ type: "spring", damping: 28, stiffness: 180, mass: 0.25 }}
-      />
+      {!shouldReduceMotion && <motion.div className="cursor-glow" style={{ x: cursorSpringX, y: cursorSpringY }} />}
 
       <div className="ai-bg">
         <div className="ai-grid" />
@@ -436,7 +465,7 @@ export default function App() {
 
               <div className="hero-cta">
                 <RippleButton href="#projects" label="View Projects" className="btn-primary" onClick={() => scrollToSection("#projects")} />
-                <RippleButton href="/Dipanshu_Choudhary_Resume_Gen_AI.pdf" label="Download Resume" className="btn-ghost" download />
+                <RippleButton href={RESUME_PATH} label="Download Resume" className="btn-ghost" download />
                 <RippleButton href="https://github.com/dipanshuchoudhary-data" label="GitHub" className="btn-ghost" external />
                 <RippleButton href="https://www.linkedin.com/in/dipanshu-choudhary-981378328" label="LinkedIn" className="btn-ghost" external />
                 <RippleButton href="#contact" label="Contact" className="btn-ghost" onClick={() => scrollToSection("#contact")} />
