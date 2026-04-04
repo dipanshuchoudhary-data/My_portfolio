@@ -1,30 +1,62 @@
-# Dipanshu Portfolio (3D Rebuild)
+# Dipanshu Choudhary — Portfolio
 
-Modern portfolio rebuilt with:
-- React + TypeScript + Vite
-- Three.js via @react-three/fiber and @react-three/drei
-- Framer Motion for section and hero animations
+A modern personal portfolio website built with React, TypeScript, and Vite, featuring smooth motion effects and 3D visuals.
 
-## Run locally
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Three.js (`@react-three/fiber`, `@react-three/drei`)
+- Framer Motion
+
+## Getting Started
+
+### 1) Install dependencies
 
 ```bash
 npm install
+```
+
+### 2) Run in development
+
+```bash
 npm run dev
 ```
 
-## Build
+### 3) Create production build
 
 ```bash
 npm run build
+```
+
+### 4) Preview production build
+
+```bash
 npm run preview
 ```
 
-## Content updates
+## Available Scripts
 
-Update your personal/project content in:
+- `npm run dev` — start Vite dev server
+- `npm run build` — type-check and build for production
+- `npm run preview` — preview the production build locally
+
+## Customize Portfolio Content
+
+Update your personal information, experience, skills, and projects in:
+
 - `src/data/portfolio.ts`
 
-## Static assets
+## Static Assets
 
-- `public/image.png`
-- `public/Dipanshu_Choudhary_Resume_Gen_AI.pdf`
+Place/update static files in:
+
+- `public/` (images, PDFs, and other static files)
+
+## Project Structure
+
+- `src/` — app source code
+- `src/data/portfolio.ts` — central portfolio content
+- `public/` — static assets
+- `index.html` — HTML entry template
