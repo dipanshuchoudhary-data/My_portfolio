@@ -88,7 +88,7 @@ const projects: Project[] = [
     tech: ["Python", "FastAPI", "TypeScript", "React", "PostgreSQL", "Alembic"],
     highlights: ["Integrity scoring workflows", "Automated LLM-assisted evaluation", "Live analytics for instructors"],
     github: "https://github.com/dipanshuchoudhary-data/Quizzer",
-    demo: "https://quizzer-f89iltr0z-dipanshu-choudharys-projects.vercel.app",
+    demo: "https://quizzer-two-sandy.vercel.app/",
     gradient: "linear-gradient(140deg, rgba(38, 82, 126, 0.55), rgba(35, 52, 94, 0.45), rgba(20, 31, 58, 0.6))",
     image: "/quizzer.png"
   },
@@ -101,20 +101,10 @@ const projects: Project[] = [
     github: "https://github.com/dipanshuchoudhary-data/Maantra-1.0",
     demo: "#",
     gradient: "linear-gradient(145deg, rgba(29, 71, 69, 0.55), rgba(35, 56, 90, 0.48), rgba(19, 33, 54, 0.58))",
-    image: "/Noor.png"
+    image: "/Maantra.png"
   },
   {
     number: "Project 3",
-    title: "MediSure - AI Medical SaaS",
-    oneLine: "Medical AI SaaS for symptom intelligence, prediction support, and secure user interaction workflows.",
-    tech: ["Python","gTTs","Streamlit UI"],
-    highlights: ["Voice-enabled consultation flow", "Secure session-based architecture", "Low-latency model responses"],
-    github: "https://github.com/dipanshuchoudhary-data/Medisure",
-    demo: "#",
-    gradient: "linear-gradient(145deg, rgba(44, 83, 112, 0.52), rgba(48, 59, 111, 0.46), rgba(23, 34, 63, 0.62))"
-  },
-  {
-    number: "Project 4",
     title: "AI Essay Mentor",
     oneLine: "Structured LLM workflow that evaluates essays and generates high-quality improvement guidance.",
     tech: ["Python", "LangChain", "LangGraph", "LangSmith", "Pydantic", "PostgreSQL", "React", "FastAPI"],
@@ -122,6 +112,16 @@ const projects: Project[] = [
     github: "https://github.com/dipanshuchoudhary-data/AI-EssayMentor",
     demo: "#",
     gradient: "linear-gradient(145deg, rgba(48, 72, 120, 0.54), rgba(44, 48, 97, 0.5), rgba(22, 30, 60, 0.64))"
+  },
+  {
+    number: "Project 4",
+    title: "MediSure - AI Medical SaaS",
+    oneLine: "Medical AI SaaS for symptom intelligence, prediction support, and secure user interaction workflows.",
+    tech: ["Python","gTTs","Streamlit UI"],
+    highlights: ["Voice-enabled consultation flow", "Secure session-based architecture", "Low-latency model responses"],
+    github: "https://github.com/dipanshuchoudhary-data/Medisure",
+    demo: "#",
+    gradient: "linear-gradient(145deg, rgba(44, 83, 112, 0.52), rgba(48, 59, 111, 0.46), rgba(23, 34, 63, 0.62))"
   },
   {
     number: "Project 5",
@@ -338,7 +338,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         <div className="card-links">
           <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
-          <a href={project.demo} target="_blank" rel="noreferrer">Demo</a>
+          <a href={project.demo} target="_blank" rel="noreferrer">Live Site</a>
         </div>
       </div>
     </motion.article>
