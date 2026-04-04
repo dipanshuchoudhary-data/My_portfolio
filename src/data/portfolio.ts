@@ -22,7 +22,7 @@ export const profile = {
   phone: "+91-7011860328",
   github: "https://github.com/dipanshuchoudhary-data",
   linkedin: "https://www.linkedin.com/in/dipanshu-choudhary-981378328",
-  resume: "/Dipanshu_Choudhary_Resume_Gen_AI.pdf"
+  resume: "/Dipanshu Choudhary - Resume.pdf"
 };
 
 export const about = [
@@ -40,25 +40,11 @@ export const strengths = [
 
 export const experiences: Experience[] = [
   {
-    role: "AI Automation & Agent Developer",
-    duration: "2025 - Present",
-    organization: "Independent / Client Brands",
-    description:
-      "Designed and deployed AI agents for two brands, automating business workflows and reducing manual operations."
-  },
-  {
     role: "Research Assistant",
     duration: "2025 - Present",
     organization: "Faculty Collaboration",
     description:
-      "Collaborating with faculty on AI/ML projects focused on deep learning and generative AI applications."
-  },
-  {
-    role: "Open-Source Contributor",
-    duration: "2025 - Present",
-    organization: "Hugging Face (Transformers)",
-    description:
-      "Contributing to the Transformers ecosystem and exploring advanced implementations in modern NLP systems."
+      "Developing AI-powered assistive technology for visually impaired students, including smart glasses that provide real-time scene understanding and exam support using computer vision and multimodal AI systems."
   }
 ];
 
