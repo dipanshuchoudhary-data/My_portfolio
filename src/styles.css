@@ -14,6 +14,10 @@
   --primary: #54f4ff;
   --accent: #7a8cff;
   --shadow: 0 24px 80px rgba(3, 8, 24, 0.45);
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --project-tilt-x: 0deg;
+  --project-tilt-y: 0deg;
 }
 
 html,
@@ -74,7 +78,7 @@ textarea {
     linear-gradient(90deg, rgba(104, 130, 207, 0.07) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(circle at center, black 35%, transparent 92%);
-  animation: gridShift 24s linear infinite;
+  animation: gridShift 34s linear infinite;
 }
 
 .blob {
@@ -131,6 +135,7 @@ textarea {
   z-index: -1;
   background: radial-gradient(circle, rgba(45, 129, 192, 0.18) 0%, rgba(56, 130, 246, 0) 70%);
   mix-blend-mode: screen;
+  will-change: transform;
 }
 
 .navbar {
@@ -216,6 +221,7 @@ textarea {
   background: radial-gradient(circle at 18% 12%, rgba(36, 220, 255, 0.16), transparent 52%),
     radial-gradient(circle at 80% 30%, rgba(93, 104, 255, 0.13), transparent 48%);
   pointer-events: none;
+  will-change: transform;
 }
 
 .hero-grid {
@@ -281,6 +287,7 @@ textarea {
   font-weight: 600;
   font-size: 0.92rem;
   transition: border-color 0.2s ease;
+  transform: translateZ(0);
 }
 
 .btn-ripple span {
@@ -317,6 +324,7 @@ textarea {
   width: min(450px, 84vw);
   justify-self: center;
   animation: idleFloat 6.5s ease-in-out infinite;
+  will-change: transform;
 }
 
 .hero-photo-ring {
@@ -324,6 +332,9 @@ textarea {
   border-radius: 34px;
   background: linear-gradient(130deg, #31d6ff, #6f7dff, #5ff3bc);
   box-shadow: 0 20px 70px rgba(47, 121, 255, 0.35);
+  transform: perspective(1200px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0);
+  transition: transform 180ms ease-out;
+  will-change: transform;
 }
 
 .hero-photo-frame {
@@ -340,8 +351,9 @@ textarea {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  transform: scale(1.01);
+  transform: scale(1.01) translateZ(0);
   transition: transform 0.38s ease;
+  will-change: transform;
 }
 
 .hero-photo-ring:hover img {
@@ -593,6 +605,8 @@ textarea {
   grid-template-columns: 0.55fr 0.45fr;
   gap: 20px;
   transition: border-color 0.24s ease, box-shadow 0.24s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 430px;
 }
 
 .project-card:hover {
@@ -602,6 +616,9 @@ textarea {
 
 .project-visual-wrap {
   border-radius: 18px;
+  transform: perspective(900px) rotateX(var(--project-tilt-x)) rotateY(var(--project-tilt-y)) translateZ(0);
+  transition: transform 160ms ease-out;
+  will-change: transform;
 }
 
 .project-visual {
@@ -621,6 +638,7 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transform: translateZ(0);
 }
 
 .project-chip {
@@ -929,11 +947,45 @@ textarea {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow,
+  .hero-photo-pulse,
+  .hero-photo-sweep,
+  .project-sweep,
+  .photo-particle,
+  .project-particle {
+    display: none;
+  }
+
+  .ai-grid,
+  .blob {
+    animation: none;
+  }
+
+  .hero-photo-shell {
+    animation: none;
+  }
+
+  .hero-photo-ring,
+  .project-visual-wrap {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .cursor-glow,
+  .hero-photo-pulse,
+  .hero-photo-sweep,
+  .project-sweep,
+  .photo-particle,
+  .project-particle {
+    display: none !important;
   }
 }
