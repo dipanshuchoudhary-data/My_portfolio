@@ -30,6 +30,7 @@ type Project = {
   highlights: string[];
   github: string;
   demo: string;
+  hideLiveSite?: boolean;
   gradient: string;
   image?: string;
 };
@@ -46,9 +47,9 @@ type ContactErrors = Partial<Record<keyof ContactForm, string>>;
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
   { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -73,6 +74,12 @@ const skillCategories: SkillCategory[] = [
 
 const experiences: ExperienceItem[] = [
   {
+    title: "Freelancer - AI Product Engineer | TZURONI LTD. (Mar 2026 - Apr 2026)",
+    description:
+      "Built CrowdWisdom, a multi-agent AI product that combines SEC insider trading data and social sentiment into RAG-powered, grounded market insights and interactive chart-based analysis.",
+    highlights: ["Delivered end-to-end ingestion and sentiment pipeline", "Implemented retrieval-backed chat with contextual memory"]
+  },
+  {
     title: "Research Assistant",
     description:
       "Developing AI-powered assistive technology for visually impaired students, including smart glasses that deliver real-time scene understanding and exam support through computer vision and multimodal AI systems.",
@@ -89,7 +96,7 @@ const projects: Project[] = [
     highlights: ["Integrity scoring workflows", "Automated LLM-assisted evaluation", "Live analytics for instructors"],
     github: "https://github.com/dipanshuchoudhary-data/Quizzer",
     demo: "https://quizzer-two-sandy.vercel.app/",
-    gradient: "linear-gradient(140deg, rgba(38, 82, 126, 0.55), rgba(35, 52, 94, 0.45), rgba(20, 31, 58, 0.6))",
+    gradient: "linear-gradient(140deg, rgba(255, 170, 124, 0.58), rgba(255, 123, 133, 0.48), rgba(80, 190, 175, 0.44))",
     image: "/quizzer.png"
   },
   {
@@ -100,7 +107,7 @@ const projects: Project[] = [
     highlights: ["Planner and executor multi-agent flow", "Persistent contextual memory", "Dynamic tool routing"],
     github: "https://github.com/dipanshuchoudhary-data/Maantra-1.0",
     demo: "#",
-    gradient: "linear-gradient(145deg, rgba(29, 71, 69, 0.55), rgba(35, 56, 90, 0.48), rgba(19, 33, 54, 0.58))",
+    gradient: "linear-gradient(145deg, rgba(114, 215, 204, 0.55), rgba(255, 145, 124, 0.46), rgba(252, 198, 128, 0.44))",
     image: "/Maantra.png"
   },
   {
@@ -111,37 +118,43 @@ const projects: Project[] = [
     highlights: ["Criteria-based scoring pipeline", "Rewrite-focused feedback system", "Traceable stage-wise evaluation"],
     github: "https://github.com/dipanshuchoudhary-data/AI-EssayMentor",
     demo: "#",
-    gradient: "linear-gradient(145deg, rgba(48, 72, 120, 0.54), rgba(44, 48, 97, 0.5), rgba(22, 30, 60, 0.64))"
+    gradient: "linear-gradient(145deg, rgba(255, 157, 129, 0.56), rgba(246, 120, 145, 0.48), rgba(115, 207, 192, 0.44))",
+    image: "/AI UPSC Mentor infographic for aspirants.png"
   },
   {
     number: "Project 4",
+    title: "MemoGraph - Agentic Knowledge Graph System",
+    oneLine: "Agentic knowledge-building platform that researches queries, writes linked Markdown topic files, and continuously improves a living knowledge base.",
+    tech: ["Python", "LangGraph", "FastAPI", "React", "Vite", "Markdown Knowledge Graph"],
+    highlights: ["Orchestrated multi-agent research-to-writing workflow", "Built progressive topic linking with bidirectional updates", "Shipped CLI, API, and web interface for end-to-end usage"],
+    github: "https://github.com/dipanshuchoudhary-data/MemoGraph",
+    demo: "https://memographs.netlify.app/",
+    gradient: "linear-gradient(145deg, rgba(254, 196, 140, 0.54), rgba(125, 208, 198, 0.5), rgba(255, 149, 140, 0.46))",
+    image: "/memograph.png"
+  },
+  {
+    number: "Project 5",
+    title: "AI Agent Systems using MCP (Expense Tracker + Spotify Automation)",
+    oneLine: "Built a unified MCP automation platform that lets users log expenses and control Spotify through natural-language prompts instead of form-based UI actions.",
+    tech: ["MCP", "Node.js", "Python", "Google Cloud Platform (GCP)", "Supabase", "REST APIs", "Spotify API"],
+    highlights: ["Unified two MCP servers for expense and Spotify automation", "Built prompt to intent to action pipeline for reliable execution", "Deployed scalable backend on GCP with Supabase"],
+    github: "https://github.com/dipanshuchoudhary-data/Expense_Tracker_Remote_Server",
+    demo: "#",
+    hideLiveSite: true,
+    gradient: "linear-gradient(145deg, rgba(255, 206, 152, 0.54), rgba(255, 150, 129, 0.46), rgba(108, 203, 192, 0.44))",
+    image: "/AI dashboard with expense and music controls.png"
+  },
+  {
+    number: "Project 6",
     title: "MediSure - AI Medical SaaS",
     oneLine: "Medical AI SaaS for symptom intelligence, prediction support, and secure user interaction workflows.",
     tech: ["Python","gTTs","Streamlit UI"],
     highlights: ["Voice-enabled consultation flow", "Secure session-based architecture", "Low-latency model responses"],
     github: "https://github.com/dipanshuchoudhary-data/Medisure",
     demo: "#",
-    gradient: "linear-gradient(145deg, rgba(44, 83, 112, 0.52), rgba(48, 59, 111, 0.46), rgba(23, 34, 63, 0.62))"
-  },
-  {
-    number: "Project 5",
-    title: "Next AI Product - Placeholder",
-    oneLine: "Upcoming AI platform focused on production reliability, observability, and enterprise workflow automation.",
-    tech: ["TBD"],
-    highlights: ["Production-ready system design", "Scalable orchestration roadmap", "Deployment-first architecture"],
-    github: "#",
-    demo: "#",
-    gradient: "linear-gradient(145deg, rgba(34, 66, 92, 0.55), rgba(39, 52, 89, 0.5), rgba(17, 27, 49, 0.64))"
-  },
-  {
-    number: "Project 6",
-    title: "Next GenAI System - Placeholder",
-    oneLine: "Upcoming GenAI system for intelligent retrieval, reasoning pipelines, and contextual decision support.",
-    tech: ["TBD"],
-    highlights: ["Retrieval and reasoning backbone", "Context fidelity focus", "Evaluation-driven engineering"],
-    github: "#",
-    demo: "#",
-    gradient: "linear-gradient(145deg, rgba(31, 58, 86, 0.56), rgba(37, 47, 84, 0.52), rgba(17, 25, 47, 0.66))"
+    hideLiveSite: true,
+    gradient: "linear-gradient(145deg, rgba(255, 176, 122, 0.52), rgba(255, 126, 136, 0.46), rgba(92, 194, 181, 0.44))",
+    image: "/medisure.svg"
   }
 ];
 
@@ -338,7 +351,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         <div className="card-links">
           <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
-          <a href={project.demo} target="_blank" rel="noreferrer">Live Site</a>
+          {!project.hideLiveSite && <a href={project.demo} target="_blank" rel="noreferrer">Live Site</a>}
         </div>
       </div>
     </motion.article>
@@ -360,6 +373,7 @@ function validateForm(form: ContactForm): ContactErrors {
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [form, setForm] = useState<ContactForm>({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<ContactErrors>({});
   const [success, setSuccess] = useState(false);
@@ -380,6 +394,38 @@ export default function App() {
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
   }, [cursorX, cursorY, shouldReduceMotion]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const storedTheme = window.localStorage.getItem("theme-preference");
+
+    const applyTheme = (nextTheme: "light" | "dark") => {
+      setTheme(nextTheme);
+      document.documentElement.setAttribute("data-theme", nextTheme);
+    };
+
+    if (storedTheme === "light" || storedTheme === "dark") {
+      applyTheme(storedTheme);
+    } else {
+      applyTheme(mediaQuery.matches ? "dark" : "light");
+    }
+
+    const onSystemThemeChange = (event: MediaQueryListEvent) => {
+      const activePreference = window.localStorage.getItem("theme-preference");
+      if (activePreference === "light" || activePreference === "dark") return;
+      applyTheme(event.matches ? "dark" : "light");
+    };
+
+    mediaQuery.addEventListener("change", onSystemThemeChange);
+    return () => mediaQuery.removeEventListener("change", onSystemThemeChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    window.localStorage.setItem("theme-preference", nextTheme);
+  };
 
   const scrollToSection = (id: string) => {
     const section = document.querySelector(id);
@@ -422,7 +468,12 @@ export default function App() {
               </li>
             ))}
           </ul>
-          <button type="button" className="mobile-toggle" onClick={() => setMobileOpen((prev) => !prev)}>Menu</button>
+          <div className="nav-actions">
+            <button type="button" className="theme-toggle" onClick={toggleTheme}>
+              {theme === "dark" ? "Light" : "Dark"}
+            </button>
+            <button type="button" className="mobile-toggle" onClick={() => setMobileOpen((prev) => !prev)}>Menu</button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -438,6 +489,9 @@ export default function App() {
                   {link.label}
                 </button>
               ))}
+              <button type="button" onClick={toggleTheme}>
+                {theme === "dark" ? "Switch to Light" : "Switch to Dark"}
+              </button>
             </motion.div>
           )}
         </AnimatePresence>
@@ -507,6 +561,21 @@ export default function App() {
           </div>
         </motion.section>
 
+        <motion.section id="projects" className="section projects-section" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
+          <div className="container">
+            <div className="section-header">
+              <h2>Projects</h2>
+              <p className="section-sub">Selected AI systems, intelligent platforms, and full-stack applications.</p>
+            </div>
+
+            <div className="projects-showcase">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.number} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
         <motion.section id="education" className="section" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
           <div className="container">
             <div className="section-header">
@@ -530,10 +599,11 @@ export default function App() {
           </div>
         </motion.section>
 
-        <motion.section id="skills" className="section" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
+        <motion.section id="skills" className="section skills-section" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}>
           <div className="container">
             <div className="section-header">
               <h2>Technical Skills</h2>
+              <p className="section-sub">Core tools and technologies used to ship production-ready AI systems.</p>
             </div>
 
             <motion.div
@@ -544,35 +614,39 @@ export default function App() {
               viewport={{ once: true, amount: 0.12 }}
             >
               {skillCategories.map((category) => (
-                <motion.article key={category.title} className="glass-card skill-card" variants={reveal} whileHover={{ y: -4 }}>
+                <motion.article
+                  key={category.title}
+                  className="glass-card skill-card"
+                  variants={reveal}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ duration: 0.22 }}
+                >
                   <div className="skill-head">
-                    <span className="skill-icon">{category.icon}</span>
-                    <h3>{category.title}</h3>
+                    <div className="skill-head-main">
+                      <span className="skill-icon">{category.icon}</span>
+                      <h3>{category.title}</h3>
+                    </div>
+                    <span className="skill-meta">{category.items.length} skills</span>
                   </div>
 
                   <div className="skill-items">
-                    {category.items.map((item) => (
-                      <span key={item} className="skill-item">{item}</span>
+                    {category.items.map((item, itemIndex) => (
+                      <motion.span
+                        key={item}
+                        className="skill-item"
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.2, delay: itemIndex * 0.025 }}
+                        whileHover={{ y: -2, scale: 1.04 }}
+                      >
+                        {item}
+                      </motion.span>
                     ))}
                   </div>
                 </motion.article>
               ))}
             </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section id="projects" className="section projects-section" variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}>
-          <div className="container">
-            <div className="section-header">
-              <h2>Projects</h2>
-              <p className="section-sub">Selected AI systems, intelligent platforms, and full-stack applications.</p>
-            </div>
-
-            <div className="projects-showcase">
-              {projects.map((project, index) => (
-                <ProjectCard key={project.number} project={project} index={index} />
-              ))}
-            </div>
           </div>
         </motion.section>
 
