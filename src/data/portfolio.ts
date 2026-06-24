@@ -22,7 +22,7 @@ export const profile = {
   phone: "+91-7011860328",
   github: "https://github.com/dipanshuchoudhary-data",
   linkedin: "https://www.linkedin.com/in/dipanshu-choudhary-981378328",
-  resume: "/Dipanshu Choudhary - Resume.pdf"
+  resume: "/Dipanshu_Choudhary_Resume_clean.pdf"
 };
 
 export const about = [

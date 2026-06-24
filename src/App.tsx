@@ -163,7 +163,7 @@ const reveal = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } }
 };
 
-const RESUME_PATH = "/Dipanshu Choudhary - Resume.pdf";
+const RESUME_PATH = "/Dipanshu_Choudhary_Resume_clean.pdf";
 
 function RippleButton({
   href,
