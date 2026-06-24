@@ -709,7 +709,7 @@ export default function App() {
                     <span className="contact-icon">LC</span>
                     <div>
                       <strong>Location</strong>
-                      <p>New Delhi, India</p>
+                      <p>Delhi, India</p>
                     </div>
                   </div>
                 </div>
