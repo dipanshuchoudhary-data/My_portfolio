@@ -14,28 +14,29 @@ export type Project = {
 
 export const profile = {
   name: "Dipanshu Choudhary",
-  title: "AI/ML Engineer",
-  subtitle: "Agentic & Generative AI | LLM Workflows | Scalable Backend Systems",
-  tagline: "Building production-grade AI agents and backend-driven generative systems.",
+  title: "AI-focused Full Stack Engineer",
+  subtitle: "Generative AI | Agentic Systems | Scalable Backend Architectures",
+  tagline:
+    "Building production-grade LLM platforms, multi-agent pipelines, and backend-driven generative systems.",
   location: "Delhi, India",
   email: "DipanshuChoudhary109@gmail.com",
-  phone: "+91-7011860328",
+  phone: "+91 7011860328",
   github: "https://github.com/dipanshuchoudhary-data",
   linkedin: "https://www.linkedin.com/in/dipanshu-choudhary-981378328",
   resume: "/Dipanshu_Choudhary_Resume_clean.pdf"
 };
 
 export const about = [
-  "AI/ML Engineer specializing in agentic AI and autonomous multi-agent systems.",
-  "Experienced in designing scalable, backend-driven LLM architectures with automation pipelines and real-time decision workflows.",
-  "Focused on production-ready generative AI, deep learning, NLP, and intelligent orchestration systems."
+  "AI-focused full stack engineer specializing in generative AI and agentic systems.",
+  "Hands-on experience building scalable LLM-powered platforms, multi-agent pipelines, and production backend architectures.",
+  "Delivered systems involving orchestration, real-time workflows, and automated evaluation frameworks."
 ];
 
 export const strengths = [
-  "Autonomous AI agents and multi-agent orchestration",
-  "Scalable backend-driven LLM workflows",
-  "Production-grade GenAI system architecture",
-  "Deep learning + modern NLP implementation"
+  "Multi-agent orchestration and intelligent decision pipelines",
+  "LLM evaluation, benchmarking, and iterative system refinement",
+  "Scalable AI pipelines and high-throughput backend services",
+  "RAG, semantic search, and production-grade GenAI architecture"
 ];
 
 export const experiences: Experience[] = [
@@ -58,46 +59,65 @@ export const experiences: Experience[] = [
 export const education = {
   degree: "Bachelor of Computer Applications (BCA)",
   school: "Amity University, Noida",
-  duration: "2024 - 2027",
-  cgpa: "8.5/10",
+  duration: "2024 - 2027 (Expected)",
+  cgpa: "8.7/10",
   highlights: [
-    "Core Computer Science foundations",
-    "Data structures and problem solving",
-    "Database and backend fundamentals",
-    "AI, ML, and software engineering"
+    "Data Structures & Algorithms and System Design",
+    "OOP, DBMS, Operating Systems, and Computer Networks",
+    "AI, ML, and full-stack software engineering",
+    "Generative AI and agentic systems coursework"
   ]
 };
 
 export const skills = {
-  languages: ["Python", "Java", "TypeScript", "JavaScript"],
-  frameworks: [
-    "React",
-    "LangChain",
-    "LangGraph",
-    "LangSmith",
-    "CrewAI",
-    "MCP",
-    "TensorFlow",
-    "PyTorch"
+  languages: ["Python", "Java", "JavaScript", "TypeScript", "Rust"],
+  coreCs: [
+    "Data Structures & Algorithms",
+    "System Design",
+    "OOP",
+    "DBMS",
+    "Operating Systems",
+    "Computer Networks"
   ],
-  tools: ["FastAPI", "REST APIs", "MLflow", "Docker", "Kafka", "Git", "GitHub", "CI/CD"],
-  databases: ["PostgreSQL", "MySQL", "Redis", "Vector Databases"]
+  aiMl: [
+    "Deep Learning",
+    "Transformers",
+    "Generative AI",
+    "NLP",
+    "Prompt Engineering",
+    "Advanced RAG",
+    "Agentic AI"
+  ],
+  frameworks: ["FastAPI", "LangChain", "LangGraph", "CrewAI", "TensorFlow", "PyTorch"],
+  llmEvaluation: ["LangSmith", "Langfuse", "Ragas", "DeepEval"],
+  databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+  cloudDevOps: ["Docker", "Kubernetes", "GCP", "Git", "GitHub"]
 };
 
 export const projects: Project[] = [
   {
     title: "Quizzer",
     summary:
-      "Scalable AI-powered secure assessment platform with backend-controlled exams, real-time integrity tracking, and automated LLM-based grading.",
-    tech: ["Python", "FastAPI", "TypeScript", "React", "PostgreSQL", "Alembic"],
+      "AI-powered secure assessment platform with async exam generation from multi-format inputs, Redis-backed integrity controls, and automated LLM grading at ~85% accuracy.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "LangChain",
+      "LangGraph",
+      "Docker"
+    ],
     link: "https://github.com/dipanshuchoudhary-data/Quizzer"
   },
   {
-    title: "Autonomous Multi-Platform AI Agent",
+    title: "Maantra",
     summary:
-      "Python-based autonomous LLM agent executing user-defined tasks across chat platforms using dynamic tool orchestration and persistent memory.",
-    tech: ["Node.js", "TypeScript", "Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
-    link: "https://github.com/dipanshuchoudhary-data/Slack-Bot"
+      "Multi-channel AI agent platform with unified task coordination, persistent memory, and cross-platform identity management across Slack, Telegram, and WhatsApp.",
+    tech: ["Python", "FastAPI", "Redis", "PostgreSQL", "LangChain", "LangGraph", "Docker"],
+    link: "https://github.com/dipanshuchoudhary-data/Maantra-1.0"
   },
   {
     title: "MediSure",

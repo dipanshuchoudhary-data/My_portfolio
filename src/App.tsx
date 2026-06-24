@@ -54,22 +54,29 @@ const navLinks = [
 ];
 
 const skillCategories: SkillCategory[] = [
-  { title: "Languages", icon: "LG", items: ["Python", "Java", "TypeScript", "JavaScript"] },
+  { title: "Languages", icon: "LG", items: ["Python", "Java", "JavaScript", "TypeScript", "Rust"] },
+  {
+    title: "Core CS",
+    icon: "CS",
+    items: ["Data Structures & Algorithms", "System Design", "OOP", "DBMS", "Operating Systems", "Computer Networks"]
+  },
   {
     title: "AI / Machine Learning",
     icon: "ML",
-    items: ["Deep Learning", "Transformers", "Generative AI", "LLMs", "Fine-Tuning", "NLP", "Prompt Engineering"]
+    items: ["Deep Learning", "Transformers", "Generative AI", "NLP", "Prompt Engineering", "Advanced RAG", "Agentic AI"]
   },
   {
-    title: "Frameworks & AI Tooling",
+    title: "Frameworks & Libraries",
     icon: "FW",
-    items: ["React", "LangChain", "LangGraph", "LangSmith", "CrewAI", "MCP", "TensorFlow", "PyTorch"]
+    items: ["FastAPI", "LangChain", "LangGraph", "CrewAI", "TensorFlow", "PyTorch"]
   },
-  { title: "Backend & Deployment", icon: "BD", items: ["FastAPI", "REST APIs", "MLflow", "Docker", "Kafka"] },
-  { title: "Databases", icon: "DB", items: ["PostgreSQL", "MySQL", "Redis", "Vector Databases"] },
-  { title: "Computer Vision", icon: "CV", items: ["OpenCV", "MediaPipe", "PIL"] },
-  { title: "Cloud & DevOps", icon: "CD", items: ["GCP", "AWS", "GCS", "CI/CD"] },
-  { title: "Version Control", icon: "VC", items: ["Git", "GitHub"] }
+  {
+    title: "LLM Evaluation",
+    icon: "EV",
+    items: ["LangSmith", "Langfuse", "Ragas", "DeepEval"]
+  },
+  { title: "Databases", icon: "DB", items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
+  { title: "Cloud & DevOps", icon: "CD", items: ["Docker", "Kubernetes", "GCP", "Git", "GitHub"] }
 ];
 
 const experiences: ExperienceItem[] = [
@@ -96,10 +103,15 @@ const experiences: ExperienceItem[] = [
 const projects: Project[] = [
   {
     number: "Project 1",
-    title: "Quizzer - AI Secure Assessment Platform",
-    oneLine: "AI-powered assessment platform with secure workflows and intelligent grading for high-integrity exams.",
-    tech: ["Python", "FastAPI", "TypeScript", "React", "PostgreSQL", "Alembic"],
-    highlights: ["Integrity scoring workflows", "Automated LLM-assisted evaluation", "Live analytics for instructors"],
+    title: "Quizzer - AI-Powered Secure Assessment Platform",
+    oneLine:
+      "End-to-end async exam generation from multi-format inputs with secure integrity controls and automated LLM grading.",
+    tech: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "Celery", "LangChain", "LangGraph", "Docker"],
+    highlights: [
+      "Processes 50+ input formats with <2s average generation time using OCR and prompt-chaining workflows",
+      "Redis timers, autosave, single-attempt locks, and real-time integrity tracking with <150ms latency",
+      "Automated grading with ~85% accuracy and 3s average grading time"
+    ],
     github: "https://github.com/dipanshuchoudhary-data/Quizzer",
     demo: "https://quizzer-two-sandy.vercel.app/",
     gradient: "linear-gradient(140deg, rgba(255, 170, 124, 0.58), rgba(255, 123, 133, 0.48), rgba(80, 190, 175, 0.44))",
@@ -107,10 +119,15 @@ const projects: Project[] = [
   },
   {
     number: "Project 2",
-    title: "Autonomous Multi-Platform AI Agent",
-    oneLine: "Autonomous agent system built for cross-platform execution with memory-aware task orchestration.",
-    tech:["Python","Slack Bolt", "LLMs", "RAG", "ChromaDB", "mem0.ai", "MCP"],
-    highlights: ["Planner and executor multi-agent flow", "Persistent contextual memory", "Dynamic tool routing"],
+    title: "Maantra - Multi-Channel AI Agent Platform",
+    oneLine:
+      "Platform-agnostic AI agent core with unified task coordination, persistent memory, and cross-platform messaging.",
+    tech: ["Python", "FastAPI", "Redis", "PostgreSQL", "LangChain", "LangGraph", "Docker"],
+    highlights: [
+      "Cross-platform identity management across Slack, Telegram, and WhatsApp with <300ms response time",
+      "Normalized messaging, lazy-loaded tools, and rate-limiting supporting 100+ concurrent conversations",
+      "Scalable backend infrastructure with 99.8% uptime"
+    ],
     github: "https://github.com/dipanshuchoudhary-data/Maantra-1.0",
     demo: "#",
     gradient: "linear-gradient(145deg, rgba(114, 215, 204, 0.55), rgba(255, 145, 124, 0.46), rgba(252, 198, 128, 0.44))",
@@ -517,10 +534,10 @@ export default function App() {
                 </motion.h1>
               </div>
 
-              <h2 className="hero-title">AI/ML Engineer | Agentic & Generative AI | LLM Workflows | Scalable Backend Systems</h2>
+              <h2 className="hero-title">AI-focused Full Stack Engineer | Generative AI | Agentic Systems | Scalable Backend Architectures</h2>
               <p className="hero-subtitle">
-                I design autonomous AI systems, scalable backend architectures, and production-grade generative AI
-                applications that solve complex real-world problems.
+                I specialize in building scalable LLM-powered platforms, multi-agent pipelines, and production backend
+                architectures with orchestration, real-time workflows, and automated evaluation frameworks.
               </p>
 
               <div className="hero-cta">
@@ -595,11 +612,11 @@ export default function App() {
                   <h4>Amity University, Noida</h4>
                 </div>
               </div>
-              <p className="education-meta">2024 - 2027 | CGPA: 8.5 / 10</p>
+              <p className="education-meta">2024 - 2027 (Expected) | CGPA: 8.7 / 10</p>
               <ul className="education-points">
-                <li>Core computer science, programming fundamentals, and software engineering exposure</li>
+                <li>Data Structures & Algorithms, System Design, OOP, DBMS, Operating Systems, and Computer Networks</li>
                 <li>Hands-on learning across databases, backend systems, and AI-oriented coursework</li>
-                <li>Academic project focus on practical implementation and deployment readiness</li>
+                <li>Academic focus on generative AI, agentic systems, and production-ready implementation</li>
               </ul>
             </motion.article>
           </div>
