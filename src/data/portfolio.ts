@@ -40,11 +40,18 @@ export const strengths = [
 
 export const experiences: Experience[] = [
   {
-    role: "Research Assistant",
-    duration: "2025 - Present",
-    organization: "Faculty Collaboration",
+    role: "Junior Full Stack AI Engineer Intern",
+    duration: "May 2026 - Present",
+    organization: "Namekart",
     description:
-      "Developing AI-powered assistive technology for visually impaired students, including smart glasses that provide real-time scene understanding and exam support using computer vision and multimodal AI systems."
+      "Engineering production-grade multi-agent systems for domain acquisition and intelligent shortlisting, with LLM evaluation pipelines and scalable backend services for high-throughput workloads."
+  },
+  {
+    role: "Freelancer - AI Product Engineer",
+    duration: "Mar 2026 - Apr 2026",
+    organization: "TZURONI LTD.",
+    description:
+      "Built a production-grade AI market intelligence platform using RAG pipelines, modular AI agents, and scalable data pipelines for ingestion, semantic search, and LLM-powered conversational analytics."
   }
 ];
 

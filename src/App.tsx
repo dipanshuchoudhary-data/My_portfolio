@@ -74,16 +74,22 @@ const skillCategories: SkillCategory[] = [
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Freelancer - AI Product Engineer | TZURONI LTD. (Mar 2026 - Apr 2026)",
-    description:
-      "Built CrowdWisdom, a multi-agent AI product that combines SEC insider trading data and social sentiment into RAG-powered, grounded market insights and interactive chart-based analysis.",
-    highlights: ["Delivered end-to-end ingestion and sentiment pipeline", "Implemented retrieval-backed chat with contextual memory"]
+    title: "Junior Full Stack AI Engineer Intern | Namekart",
+    description: "May 2026 - Present",
+    highlights: [
+      "Engineered production-grade multi-agent systems for domain acquisition and intelligent shortlisting using multi-stage pipelines and ranking algorithms.",
+      "Developed LLM evaluation and benchmarking pipelines to assess agent performance and improve decision quality.",
+      "Built and optimized scalable AI pipelines and backend services for high-throughput production workloads."
+    ]
   },
   {
-    title: "Research Assistant",
-    description:
-      "Developing AI-powered assistive technology for visually impaired students, including smart glasses that deliver real-time scene understanding and exam support through computer vision and multimodal AI systems.",
-    highlights: ["Built assistive computer vision workflows", "Designed real-time AI support for academic use cases"]
+    title: "Freelancer - AI Product Engineer | TZURONI LTD.",
+    description: "Mar 2026 - Apr 2026",
+    highlights: [
+      "Engineered a production-grade AI market intelligence platform using RAG pipelines with SEC filings, social media data, and sentiment analysis.",
+      "Built modular AI agents and scalable data pipelines for ingestion, preprocessing, semantic search, and LLM-powered conversational analytics.",
+      "Implemented resilient fallback mechanisms and workflow orchestration for production reliability."
+    ]
   }
 ];
 
