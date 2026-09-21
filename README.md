@@ -1,62 +1,86 @@
 # Dipanshu Choudhary — Portfolio
 
-A modern personal portfolio website built with React, TypeScript, and Vite, featuring smooth motion effects and 3D visuals.
+Personal portfolio featuring a 3D galaxy theme with an interactive solar system project showcase.
+
+**Live:** [portfolio.dipanshuchoudhary109.workers.dev](https://portfolio.dipanshuchoudhary109.workers.dev/)
 
 ## Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- Three.js (`@react-three/fiber`, `@react-three/drei`)
-- Framer Motion
+- **Framework:** Next.js 16 (App Router, React 19)
+- **3D:** React Three Fiber, Drei, Three.js
+- **Animation:** GSAP (ScrollTrigger), Framer Motion
+- **Scrolling:** Lenis (smooth scroll)
+- **Styling:** Tailwind CSS 4
+- **Language:** TypeScript
+
+## Features
+
+- Interactive 3D galaxy background with adaptive quality detection
+- Solar system visualization for project showcase
+- Smooth scroll-driven animations
+- Custom cursor, magnetic buttons, glass cards
+- Full SEO (Open Graph, sitemap, robots)
+- Responsive design with mobile optimizations
 
 ## Getting Started
 
-### 1) Install dependencies
-
 ```bash
 npm install
-```
-
-### 2) Run in development
-
-```bash
+cp .env.example .env.local   # then fill RESEND_API_KEY + CONTACT_TO_EMAIL
 npm run dev
 ```
 
-### 3) Create production build
+Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
 
 ```bash
-npm run build
+npm run dev           # next dev (Turbopack)
+npm run build         # production build
+npm run start         # serve production build
+npm run lint          # eslint
+npm run type-check    # tsc --noEmit
+npm test              # vitest one-shot
+npm run test:watch    # vitest watch mode
+npm run test:coverage # vitest + v8 coverage report
 ```
 
-### 4) Preview production build
+## Testing
 
-```bash
-npm run preview
-```
+Vitest + @testing-library/react with jsdom. **125 tests across libs, hooks,
+the contact API route, and every UI / layout / section component.** Coverage
+sits around **83% statements / 78% branches**, with `lib/`, `hooks/`,
+`api/contact`, and most components at or near 100%. See
+[tests/README.md](tests/README.md) for the testing strategy and what is
+intentionally covered by Playwright instead (3D / WebGL).
 
-## Available Scripts
+## Environment
 
-- `npm run dev` — start Vite dev server
-- `npm run build` — type-check and build for production
-- `npm run preview` — preview the production build locally
+The contact form (`src/app/api/contact/route.ts`) needs:
 
-## Customize Portfolio Content
+- `RESEND_API_KEY` — sign up at [resend.com](https://resend.com) (free tier: 100 emails/day)
+- `CONTACT_TO_EMAIL` — where submissions are delivered
+- `CONTACT_FROM_EMAIL` — optional verified sender (defaults to Resend's onboarding sender)
 
-Update your personal information, experience, skills, and projects in:
-
-- `src/data/portfolio.ts`
-
-## Static Assets
-
-Place/update static files in:
-
-- `public/` (images, PDFs, and other static files)
+Without these set, the API endpoint returns 502 and the form gracefully falls back to the visible mailto link.
 
 ## Project Structure
 
-- `src/` — app source code
-- `src/data/portfolio.ts` — central portfolio content
-- `public/` — static assets
-- `index.html` — HTML entry template
+```
+src/
+├── app/            # Pages, layout, SEO, providers
+├── components/
+│   ├── layout/     # Navigation, Footer, CustomCursor, Preloader
+│   ├── sections/   # Hero, About, Projects, Skills, Contact
+│   ├── three/      # Galaxy, StarField, SolarSystem, ScrollCamera
+│   └── ui/         # GlassCard, ScrollReveal, GradientText, MagneticButton
+├── hooks/          # useMediaQuery, useScrollProgress, useMousePosition
+├── lib/            # Constants, utilities, GSAP config, quality detection
+└── types/          # TypeScript interfaces
+```
+
+## Contact
+
+- **Email:** DipanshuChoudhary109@gmail.com
+- **LinkedIn:** [Dipanshu Choudhary](https://www.linkedin.com/in/dippuch7011)
+- **GitHub:** [dipanshuchoudhary-data](https://github.com/dipanshuchoudhary-data)
