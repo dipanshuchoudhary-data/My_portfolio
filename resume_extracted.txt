@@ -1,0 +1,62 @@
+         Dipanshu Choudhary
+
+ +91 7011860328 |  DipanshuChoudhary109@gmail.com |  Delhi, India | GitHub | Portfolio | LinkedIn
+
+SUMMARY
+
+AI-focused software developer specializing in generative AI systems, with hands-on experience building scalable
+LLM-powered platforms, distributed async processing systems, and secure backend architectures. Delivered
+production-grade systems involving multi-agent orchestration, real-time workflows, and automated evaluation
+frameworks.
+
+PROJECTS
+
+Quizzer ­ AI-Powered Secure Assessment Platform | Next.js, TypeScript · FastAPI · PostgreSQL, Redis,
+Celery · LangChain, LangGraph · OCR · Docker | Dec 2025 ­ Present | Live | GitHub
+
+   Built an end-to-end async pipeline to generate exams from multi-format inputs (text, URLs, PDFs, DOCX,
+   PPTX, images) using OCR and multi-stage prompt-chaining workflows with Celery task coordination,
+   processing 50+ document formats with <2s average generation time
+   Engineered a secure backend-driven exam architecture with Redis timers, autosave, single-attempt locks,
+   token validation, and real-time integrity tracking (tab switch, blur, copy/paste detection) with <150ms
+   response latency
+   Developed automated grading combining rule-based scoring and structured prompt evaluation with
+   analytics dashboards and export features, achieving ~85% scoring accuracy and 3s average grading time
+
+Maantra ­ Multi-Channel AI Agent Platform | Python, FastAPI · Redis, PostgreSQL · LangChain,
+LangGraph · APIs · Docker | Nov 2025 ­ Present | GitHub
+
+   Architected a platform-agnostic AI agent core with unified task coordination, persistent memory, and
+   cross-platform identity management enabling reasoning, tool execution, and privacy-first controls across
+   Slack, Telegram, and WhatsApp with <300ms average response time
+   Built scalable backend infrastructure with normalized messaging, lazy-loaded tools, and resilient rate-
+   limiting/fallback mechanisms supporting 100+ concurrent conversations with 99.8% uptime
+
+AI Essay Mentor ­ LLM-Based Writing Evaluation System | Python · LangChain, LangSmith · OpenRouter ·
+NLP | Aug 2025 ­ Sep 2025 | GitHub
+
+   Built an essay evaluation platform with a tiered subscription model (Free/Basic/Premium) offering
+   iterative feedback cycles up to 4 improvement iterations with 5s average evaluation time
+   Implemented multi-dimensional scoring engine evaluating semantic quality, coherence, and analytical
+   depth with structured prompt evaluation achieving 90% consistency across evaluation metrics
+
+EXPERIENCE
+
+Research Assistant | Dr. Garima Bohra ­ Assistive Technology Research
+   Developing AI-powered assistive technology for visually impaired students, building smart glasses
+   enabling real-time environmental understanding and exam assistance using computer vision-based
+   systems and AI models
+
+EDUCATION
+
+Amity University, Noida                  2024 ­ 2027 (Expected)
+Bachelor of Computer Applications (BCA)              CGPA: 8.5/10
+
+SKILLS
+
+Languages: Python, Java, JavaScript, TypeScript
+AI / LLM: Generative AI, Transformers, LLMs, NLP, Prompt Engineering, Advanced RAG
+Frameworks: LangChain, LangGraph, LangSmith, CrewAI, TensorFlow, PyTorch
+Backend: FastAPI, REST APIs, Async Systems, Celery, WebSockets
+Databases: PostgreSQL, MySQL, Redis · DevOps & Tools: AWS, GCP, Docker, CI/CD, Git, GitHub
+
