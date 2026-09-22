@@ -47,9 +47,9 @@ describe("<Hero />", () => {
     }
   });
 
-  it("shows the title from constants", () => {
+  it("shows the hero role", () => {
     render(<Hero />);
-    expect(screen.getByText(personalInfo.title)).toBeInTheDocument();
+    expect(screen.getByText("AI/ML & Full-Stack Engineer")).toBeInTheDocument();
   });
 
   it("scrolls to #projects when 'View systems' is clicked", () => {
